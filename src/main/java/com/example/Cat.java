@@ -2,6 +2,8 @@ package com.example;
 
 import java.util.List;
 
+import static com.example.DataForTesting.CAT_SOUND;
+
 public class Cat {
 
     Predator predator;
@@ -11,7 +13,7 @@ public class Cat {
     }
 
     public String getSound() {
-        return "Мяу";
+        return CAT_SOUND;
     }
 
     public List<String> getFood() throws Exception {

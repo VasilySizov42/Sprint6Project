@@ -28,6 +28,7 @@ public class DataForTesting {
     public static final String EXPAT_UNKNOWN_MANE = "Используйте допустимые значения пола животного - Самец или Самка";
     //Other variables
     public static final String FAMILY = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
+    public static final String FELINE_FAMILY = "Кошачьи";
     //поля для заполнения:
     //Пол, Соответствие мужскому, Тип животного, Еда, Количество вызовов метода,
     // Ожидаемое колличество вызовов метода, Количество раз вызова метода
@@ -37,7 +38,7 @@ public class DataForTesting {
             {MAN, true, PREDATOR, PREDATOR_FOOD,3, 3, 3},
             {WOMAN, false, PREDATOR, PREDATOR_FOOD,4, 4, 4},
             {WOMAN, false, PREDATOR, PREDATOR_FOOD,7, 7, 7},
-            {WOMAN, false, PREDATOR, PREDATOR_FOOD,8, 6, 8},
+            {WOMAN, false, PREDATOR, PREDATOR_FOOD,8, 8, 8},
             {MAN, true, PREDATOR, HERBIVORE_FOOD, 1, 1, 1},
             {WOMAN, true, PREDATOR, PREDATOR_FOOD,6, 6, 6},
     };
