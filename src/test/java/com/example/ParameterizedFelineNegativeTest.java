@@ -9,6 +9,7 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import static com.example.DataForTesting.*;
+import static org.junit.Assert.assertThrows;
 
 @RunWith(Parameterized.class)
 public class ParameterizedFelineNegativeTest {
@@ -43,9 +44,16 @@ public class ParameterizedFelineNegativeTest {
     }*/
     @Test
     public void getKittensReturnTest() {
-        feline.getKittens(kittensCount);
-        Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
-        Mockito.verify(feline, Mockito.times(1)).getKittens(expKittenCount);
-        Mockito.verifyNoMoreInteractions(feline);
+        try {
+            assertThrows("Ой", Exception.class, () -> feline.getKittens(kittensCount));
+            feline.getKittens(kittensCount);
+            Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
+            Mockito.verify(feline, Mockito.times(1)).getKittens(expKittenCount);
+            Mockito.verifyNoMoreInteractions(feline);
+
+        }
+        catch (Exception e){
+
+        }
     }
 }

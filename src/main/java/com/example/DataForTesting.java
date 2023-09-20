@@ -48,6 +48,7 @@ public class DataForTesting {
     };
     public static final Object[][] FELINE_NEGATIVE_TEST = {
             {1, 1, -5},
+            {2, 2, 2},
             {1, 1, -1},
             {2, 0, 2},
     };
