@@ -2,8 +2,7 @@ package com.example;
 
 import org.junit.Test;
 
-import static com.example.DataForTesting.ONE_MORE_ZERO;
-import static com.example.DataForTesting.PREDATOR_FOOD;
+import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
@@ -17,7 +16,7 @@ public class FelineTest {
     public void getFamilyTest() {
         Feline feline = new Feline();
         var actual = feline.getFamily();
-        assertEquals("Кошачьи", actual);
+        assertEquals(FELINE_FAMILY, actual);
     }
     @Test
     public void getKittensTest() {
@@ -29,7 +28,7 @@ public class FelineTest {
     public void getSomeKittensTest() {
         Feline feline = new Feline();
         var expected = 10*(Math.random());
-        var actual = feline.getKittens((int) Math.round(expected));
-        assertEquals((int) Math.round(expected), actual);
+        var actual = feline.getKittens((int) expected);
+        assertEquals((int) expected, actual);
     }
 }

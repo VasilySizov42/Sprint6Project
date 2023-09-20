@@ -31,7 +31,7 @@ public class AnimalTest {
         }
     }
     @Test
-    public void getFamilyTest() throws Exception {
+    public void getFamilyTest() {
         Animal animal = new Animal();
         var actual = animal.getFamily();
         assertEquals(FAMILY, actual);

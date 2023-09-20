@@ -6,8 +6,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static com.example.DataForTesting.CAT_SOUND;
-import static com.example.DataForTesting.ONE_MORE_ZERO;
+import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -24,8 +23,9 @@ public class CatTest {
     @Test
     public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
-        cat.getFood();
+        var actual = cat.getFood();//-> predator.eatMeat(); predator = feline; feline.eatMeat() -> return getFood(PREDATOR);
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).eatMeat();
         Mockito.verifyNoMoreInteractions(feline);
+        assertEquals(INEDIBLE_FOOD, PREDATOR_FOOD, actual);
     }
 }

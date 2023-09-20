@@ -3,7 +3,7 @@ package com.example;
 import java.util.List;
 
 import static com.example.DataForTesting.*;
-import static com.example.DataForTesting.FAMILY;
+//import static com.example.DataForTesting.FAMILY;
 
 public class Animal {
 

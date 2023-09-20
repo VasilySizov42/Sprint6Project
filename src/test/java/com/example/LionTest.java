@@ -15,14 +15,14 @@ import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertThrows;
 
 @RunWith(Parameterized.class)
-//@RunWith(MockitoJUnitRunner.class)
+
 public class LionTest {
     private final String sex;
     private boolean exMane;
     private final String type;
     private final List food;
-    private int kittenCount;
-    private final int exKittenCount;
+    private final int kittenCount;
+    private final int expKittenCount;
     private final int iteration;
 
     @Before
@@ -34,14 +34,14 @@ public class LionTest {
     Feline feline;
 
     //Это this
-    public LionTest(String sex, boolean exMane, String type, List food,
-                    int kittenCount, int exKittenCount, int iteration) {
+    public LionTest(String sex, boolean exMane, String type,  List food,
+                    int kittenCount, int expKittenCount, int iteration) {
         this.sex = sex;
         this.exMane = exMane;
         this.type = type;
         this.food = food;
         this.kittenCount = kittenCount;
-        this.exKittenCount = exKittenCount;
+        this.expKittenCount = expKittenCount;
         this.iteration = iteration;
     }
 
@@ -53,29 +53,30 @@ public class LionTest {
 
     //Это тесты
     @Test
-    public void getKittensTest() {
-        try {
+    public void getKittensTest() throws Exception {
+        /*try {*/
             Lion lion = new Lion(feline, sex);
-            assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
-            for (int i = ZERO; i < iteration; i++) {
-                lion.getKittens();
-            }
-            Mockito.when(feline.getKittens()).thenReturn(exKittenCount);
+        for (int i = ZERO; i < iteration; i++) {
+            System.out.println(i);
+            lion.getKittens();
+        }
+            Mockito.when(feline.getKittens()).thenReturn(expKittenCount);
             Mockito.verify(feline, Mockito.times(iteration)).getKittens();
             Mockito.verifyNoMoreInteractions(feline);
-            Assert.assertEquals("", exKittenCount, lion.getKittens());
-        } catch (Exception e) {
-            Assert.assertEquals(EXPAT_UNKNOWN_MANE,
+            Assert.assertEquals("", expKittenCount, lion.getKittens());
+        /*} catch (Exception e) {
+            System.out.println(e.getMessage());
+            Assert.assertEquals(
                     EXPAT_UNKNOWN_MANE,
                     e.getMessage());
-        }
+        }*/
     }
 
     @Test
-    public void doesHaveManeTest() /*throws Exception*/ {
+    public void doesHaveManeTest() {
         try {
             Lion lion = new Lion(feline, sex);
-            assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
+            //assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
             lion.doesHaveMane();
         } catch (Exception e) {
             Assert.assertEquals(
@@ -87,7 +88,7 @@ public class LionTest {
     @Test
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline, sex);
-        assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
+        //assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
         for (int i = ZERO; i < iteration; i++) {
             lion.getFood();
         }

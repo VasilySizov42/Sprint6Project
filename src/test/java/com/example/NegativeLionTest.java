@@ -15,13 +15,13 @@ import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertThrows;
 
 @RunWith(Parameterized.class)
-//@RunWith(MockitoJUnitRunner.class)
+
 public class NegativeLionTest {
     private final String sex;
     private boolean exMane;
     private final String type;
     private final List food;
-    private int kittenCount;
+    private final int kittenCount;
     private final int exKittenCount;
     private final int iteration;
 
@@ -44,14 +44,14 @@ public class NegativeLionTest {
         this.exKittenCount = exKittenCount;
         this.iteration = iteration;
     }
-    //Это this.Lion
+    //Это this.NegativeLionTest
     @Parameterized.Parameters
     public static Object[][] params() {
         return LION_NEGATIVE_SEX;
     }
     //Это тесты
     @Test
-    public void getKittensTest() /*throws Exception*/ {
+    public void getKittensTest() {
         try {
             Lion lion = new Lion(feline, sex);
             assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
@@ -63,26 +63,12 @@ public class NegativeLionTest {
             Mockito.verifyNoMoreInteractions(feline);
             Assert.assertEquals("", exKittenCount, lion.getKittens());
         } catch (Exception e) {
-            Assert.assertEquals(EXPAT_UNKNOWN_MANE,
+            Assert.assertEquals(
                     EXPAT_UNKNOWN_MANE,
                     e.getMessage());
         }
     }
-    /*
-    @Test
-     public void doesHaveManeTest(){
-         try {
-             Lion lion = new Lion(feline, sex);
-             assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
-             lion.doesHaveMane();
-         }
-         catch (Exception e) {
-             Assert.assertEquals(
-                     EXPAT_UNKNOWN_MANE,
-                     e.getMessage());
-         }
-     }
-     */
+
     @Test(expected = Exception.class)
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline, sex);
@@ -94,6 +80,5 @@ public class NegativeLionTest {
             Mockito.verifyNoMoreInteractions(feline);
             Assert.assertEquals(INEDIBLE_FOOD, food, lion.getFood());
         }
-
     }
 }
