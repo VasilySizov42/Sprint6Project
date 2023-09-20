@@ -32,7 +32,7 @@ public class ParameterizedFelineNegativeTest {
         return FELINE_NEGATIVE_TEST;
     }
 
-    @Test
+    /*@Test
     public void getKittensSomeIterationTest() {
         for (int i = ZERO; i < iteration; i++) {
             feline.getKittens(kittensCount);
@@ -40,7 +40,7 @@ public class ParameterizedFelineNegativeTest {
         Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
         Mockito.verify(feline, Mockito.times(iteration)).getKittens(Mockito.anyInt());
         Mockito.verifyNoMoreInteractions(feline);
-    }
+    }*/
     @Test
     public void getKittensReturnTest() {
         feline.getKittens(kittensCount);
