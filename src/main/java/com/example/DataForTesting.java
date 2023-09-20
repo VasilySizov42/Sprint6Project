@@ -7,6 +7,8 @@ public class DataForTesting {
     public static final Integer ZERO = 0;
     public static final Integer ONE_MORE_ZERO = 1;
     public static final Integer ONE_LESS_ZERO = -1;
+    public static final Integer VAR_FOR_MATH = 10;
+
     //Animal types
     public static final String PREDATOR = "Хищник";
     public static final String HERBIVORE = "Травоядное";
@@ -32,15 +34,22 @@ public class DataForTesting {
     //поля для заполнения:
     //Пол, Соответствие мужскому, Тип животного, Еда, Количество вызовов метода,
     // Ожидаемое колличество вызовов метода, Количество раз вызова метода
-    public static final Object[][] FELINE_TOLERABLE_SEX = {
+    public static final Object[][] FELINE_TEST = {
+            {1, 1, -1},
+            {1, 1, 0},
             {1, 1, 1},
+            {2, 0, 2},
+            {-5, -5, 2},
+            {-1, -1, 2},
+            {0, 0, 2},
+            {1, 1, 2},
             {2, 2, 2},
             {3, 3, 3},
-            {4, 4, 4},
-            {7, 7, 7},
-            {8, 8, 8},
-            {5, 5, 5},
-            {6, 6, 6},
+    };
+    public static final Object[][] FELINE_NEGATIVE_TEST = {
+            {1, 1, -5},
+            {1, 1, -1},
+            {2, 0, 2},
     };
     public static final Object[][] LION_TOLERABLE_SEX = {
             {MAN, true, PREDATOR, PREDATOR_FOOD, 1, 1, 1},

@@ -27,7 +27,7 @@ public class FelineTest {
     @Test
     public void getSomeKittensTest() {
         Feline feline = new Feline();
-        var expected = 10*(Math.random());
+        var expected = VAR_FOR_MATH*(Math.random());
         var actual = feline.getKittens((int) expected);
         assertEquals((int) expected, actual);
     }

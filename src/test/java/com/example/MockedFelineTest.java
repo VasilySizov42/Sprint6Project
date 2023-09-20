@@ -23,14 +23,21 @@ public class MockedFelineTest {
         Mockito.verifyNoMoreInteractions(feline);
     }
     @Test
-    public void getKittens() {
+    public void getKittensTest() {
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens();
         Mockito.verifyNoMoreInteractions(feline);
     }
-    /*@Test
-    public void getKittensTest(int kittensCount) {
-        Mockito.when(feline.getKittens()).thenReturn(expKittenCount);
-        Mockito.verify(feline, Mockito.times(iteration)).getKittens(kittensCount);
+    @Test
+    public void getSomeKittensTest() {
+
+        int kittensCount = ONE_MORE_ZERO;
+
+        Integer expKittenCount = ONE_MORE_ZERO;
+
+        feline.getKittens(kittensCount);
+
+        Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
+        Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens(expKittenCount);
         Mockito.verifyNoMoreInteractions(feline);
-    }*/
+    }
 }
