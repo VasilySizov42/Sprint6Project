@@ -11,8 +11,8 @@
 .mtj.tmp/
 # Idea components
 .idea
-\target
-\target\
+
+target
 \src\test\java\com\example\ParameterizedFelineNegativeTest.java
 
 # Package Files #
