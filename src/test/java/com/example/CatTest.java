@@ -23,7 +23,9 @@ public class CatTest {
     @Test
     public void getFoodTest() throws Exception {
         Cat cat = new Cat(feline);
+        Mockito.when(feline.eatMeat()).thenReturn(PREDATOR_FOOD);
         var actual = cat.getFood();//-> predator.eatMeat(); predator = feline; feline.eatMeat() -> return getFood(PREDATOR);
+        //Mockito.when(feline.eatMeat()).thenReturn(PREDATOR_FOOD);
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).eatMeat();
         Mockito.verifyNoMoreInteractions(feline);
         assertEquals(INEDIBLE_FOOD, PREDATOR_FOOD, actual);

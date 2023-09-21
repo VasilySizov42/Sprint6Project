@@ -14,29 +14,27 @@ public class MockedFelineTest {
     Feline feline;
     @Test
     public void eatMeatTest() throws Exception {
+        feline.eatMeat();
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).eatMeat();
         Mockito.verifyNoMoreInteractions(feline);
     }
     @Test
     public void getFamilyTest() {
+        feline.getFamily();
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getFamily();
         Mockito.verifyNoMoreInteractions(feline);
     }
     @Test
     public void getKittensTest() {
+        feline.getKittens();
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens();
         Mockito.verifyNoMoreInteractions(feline);
     }
     @Test
     public void getSomeKittensTest() {
-
         int kittensCount = ONE_MORE_ZERO;
-
         Integer expKittenCount = ONE_MORE_ZERO;
-
         feline.getKittens(kittensCount);
-
-        Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
         Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens(expKittenCount);
         Mockito.verifyNoMoreInteractions(feline);
     }

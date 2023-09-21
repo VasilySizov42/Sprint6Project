@@ -21,7 +21,7 @@ public class AnimalTest {
         assertEquals(HERBIVORE_FOOD, actual);
     }
     @Test
-    public void getFoodForOthersTest(){
+    public void getFoodForOthersTest() {
         Animal animal = new Animal();
         try {
             animal.getFood(OMNIVORE);

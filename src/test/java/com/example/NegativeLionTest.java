@@ -58,10 +58,6 @@ public class NegativeLionTest {
             for (int i = ZERO; i < iteration; i++) {
                 lion.getKittens();
             }
-            //Mockito.when(feline.getKittens()).thenReturn(exKittenCount);
-            //Mockito.verify(feline, Mockito.times(iteration)).getKittens();
-            //Mockito.verifyNoMoreInteractions(feline);
-            //Assert.assertEquals("", exKittenCount, lion.getKittens());
         } catch (Exception e) {
             Assert.assertEquals(
                     EXPAT_UNKNOWN_MANE,
