@@ -8,8 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import static com.example.DataForTesting.FELINE_TEST;
-import static com.example.DataForTesting.ZERO;
+import static com.example.DataForTesting.*;
 
 @RunWith(Parameterized.class)
 public class ParameterizedFelineTest {
@@ -35,7 +34,7 @@ public class ParameterizedFelineTest {
     @Test
     public void getKittensTest() {
         feline.getKittens(kittensCount);
-        Mockito.verify(feline, Mockito.times(1)).getKittens(Mockito.anyInt());
+        Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens(Mockito.anyInt());
         Mockito.verifyNoMoreInteractions(feline);
     }
     @Test
@@ -51,7 +50,7 @@ public class ParameterizedFelineTest {
     public void getKittensReturnTest() {
             feline.getKittens(kittensCount);
         Mockito.when(feline.getKittens(kittensCount)).thenReturn(kittensCount);
-        Mockito.verify(feline, Mockito.times(1)).getKittens(expKittenCount);
+        Mockito.verify(feline, Mockito.times(ONE_MORE_ZERO)).getKittens(expKittenCount);
         Mockito.verifyNoMoreInteractions(feline);
     }
 }

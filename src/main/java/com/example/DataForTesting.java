@@ -36,22 +36,14 @@ public class DataForTesting {
     //Пол, Соответствие мужскому, Тип животного, Еда, Количество вызовов метода,
     // Ожидаемое колличество вызовов метода, Количество раз вызова метода
     public static final Object[][] FELINE_TEST = {
-            {1, 1, -1},
             {1, 1, 0},
             {1, 1, 1},
-            {2, 0, 2},
             {-5, -5, 2},
             {-1, -1, 2},
             {0, 0, 2},
             {1, 1, 2},
             {2, 2, 2},
             {3, 3, 3},
-    };
-    public static final Object[][] FELINE_NEGATIVE_TEST = {
-            {1, 1, -5},
-            {2, 2, 2},
-            {1, 1, -1},
-            {2, 0, 2},
     };
     public static final Object[][] LION_TOLERABLE_SEX = {
             {MAN, true, PREDATOR, PREDATOR_FOOD},

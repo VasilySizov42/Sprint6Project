@@ -2,20 +2,22 @@
 
 import java.util.List;
 
-<span class="fc" id="L5">public class Animal {</span>
+import static com.example.DataForTesting.*;
+//import static com.example.DataForTesting.FAMILY;
+
+<span class="fc" id="L8">public class Animal {</span>
 
     public List&lt;String&gt; getFood(String animalKind) throws Exception {
-<span class="fc bfc" id="L8" title="All 2 branches covered.">        if (&quot;Травоядное&quot;.equals(animalKind)) {</span>
-<span class="fc" id="L9">            return List.of(&quot;Трава&quot;, &quot;Различные растения&quot;);</span>
-<span class="fc bfc" id="L10" title="All 2 branches covered.">        } else if (&quot;Хищник&quot;.equals(animalKind)) {</span>
-<span class="fc" id="L11">            return List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;);</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (HERBIVORE.equals(animalKind)) {</span>
+<span class="fc" id="L12">            return HERBIVORE_FOOD;</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        } else if (PREDATOR.equals(animalKind)) {</span>
+<span class="fc" id="L14">            return PREDATOR_FOOD;</span>
         } else {
-<span class="fc" id="L13">            throw new Exception(&quot;Неизвестный вид животного, используйте значение Травоядное или Хищник&quot;);</span>
+<span class="fc" id="L16">            throw new Exception(EXPAT_UNKNOWN_TYPE);</span>
         }
     }
-
     public String getFamily() {
-<span class="fc" id="L18">        return &quot;Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи&quot;;</span>
+<span class="fc" id="L20">        return FAMILY;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
