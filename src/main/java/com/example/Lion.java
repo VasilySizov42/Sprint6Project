@@ -7,6 +7,7 @@ import static com.example.DataForTesting.*;
 public class Lion {
     Feline feline;
     boolean hasMane;
+
     public Lion(Feline feline, String sex) throws Exception {
         this.feline = feline;
         if (MAN.equals(sex)) {

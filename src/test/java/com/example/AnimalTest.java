@@ -7,7 +7,6 @@ import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertEquals;
 
 public class AnimalTest {
-
     @Test
     public void getFoodForPredatorTest() throws Exception {
         Animal animal = new Animal();

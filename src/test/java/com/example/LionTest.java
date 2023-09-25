@@ -14,7 +14,6 @@ import java.util.List;
 import static com.example.DataForTesting.*;
 
 @RunWith(Parameterized.class)
-
 public class LionTest {
     private final String sex;
     private boolean exMane;
@@ -25,10 +24,8 @@ public class LionTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
-
     @Mock
     Feline feline;
-
     //Это this
     public LionTest(String sex, boolean exMane, String type, List food) {
         this.sex = sex;
@@ -36,13 +33,11 @@ public class LionTest {
         this.type = type;
         this.food = food;
     }
-
     //Это this.Lion
     @Parameterized.Parameters
     public static Object[][] params() {
         return LION_TOLERABLE_SEX;
     }
-
     //Это тесты
     @Test
     public void getKittensTest() throws Exception {
@@ -53,7 +48,6 @@ public class LionTest {
             Mockito.verifyNoMoreInteractions(feline);
             Assert.assertEquals(UNEXPECTED_RESULT, (int) ONE_MORE_ZERO, lion.getKittens());
     }
-
     @Test
     public void doesHaveManeTest() {
         try {
@@ -66,7 +60,6 @@ public class LionTest {
                     e.getMessage());
         }
     }
-
     @Test
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline, sex);

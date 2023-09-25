@@ -15,7 +15,6 @@ import static com.example.DataForTesting.*;
 import static org.junit.Assert.assertThrows;
 
 @RunWith(Parameterized.class)
-
 public class NegativeLionTest {
     private final String sex;
     private boolean exMane;
@@ -29,10 +28,8 @@ public class NegativeLionTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
-
     @Mock
     Feline feline;
-
     //Это this
     public NegativeLionTest(String sex, boolean exMane, String type, List food,
                             int kittenCount, int exKittenCount, int iteration) {
@@ -64,7 +61,6 @@ public class NegativeLionTest {
                     e.getMessage());
         }
     }
-
     @Test(expected = Exception.class)
     public void getFoodTest() throws Exception {
         Lion lion = new Lion(feline, sex);

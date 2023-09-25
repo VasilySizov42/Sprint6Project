@@ -8,7 +8,6 @@ public class DataForTesting {
     public static final Integer ONE_MORE_ZERO = 1;
     public static final Integer ONE_LESS_ZERO = -1;
     public static final Integer VAR_FOR_MATH = 10;
-
     //Animal types
     public static final String PREDATOR = "Хищник";
     public static final String HERBIVORE = "Травоядное";
@@ -58,5 +57,4 @@ public class DataForTesting {
     public static final Object[][] LION_NEGATIVE_SEX = {
             {PERVERT, true, PREDATOR, PREDATOR_FOOD, 5, 5, 5},
     };
-
 }

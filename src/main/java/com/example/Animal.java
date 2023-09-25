@@ -6,7 +6,6 @@ import static com.example.DataForTesting.*;
 //import static com.example.DataForTesting.FAMILY;
 
 public class Animal {
-
     public List<String> getFood(String animalKind) throws Exception {
         if (HERBIVORE.equals(animalKind)) {
             return HERBIVORE_FOOD;
