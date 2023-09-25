@@ -27,7 +27,7 @@ public class ParameterizedFelineTest {
     }
     @Mock
     Feline feline;
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Количество котят. Тестовые данные: {0} {1} {2}")
     public static Object[][] params() {
         return FELINE_TEST;
     }

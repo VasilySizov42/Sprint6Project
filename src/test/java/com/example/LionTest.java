@@ -34,7 +34,7 @@ public class LionTest {
         this.food = food;
     }
     //Это this.Lion
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Проверка getKittens(), doesHaveMane(), getFood(). Тестовые данные: {0} {1} {2} {3}")
     public static Object[][] params() {
         return LION_TOLERABLE_SEX;
     }
@@ -52,7 +52,6 @@ public class LionTest {
     public void doesHaveManeTest() {
         try {
             Lion lion = new Lion(feline, sex);
-            //assertThrows(Exception.class, () -> new Lion(feline, PERVERT));
             lion.doesHaveMane();
         } catch (Exception e) {
             Assert.assertEquals(

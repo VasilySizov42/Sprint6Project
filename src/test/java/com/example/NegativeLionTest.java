@@ -42,7 +42,7 @@ public class NegativeLionTest {
         this.iteration = iteration;
     }
     //Это this.NegativeLionTest
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Проверка lion.getKittens(), lion.getFood(). Тестовые данные: {0} {1} {2} {3} {4} {5} {6}")
     public static Object[][] params() {
         return LION_NEGATIVE_SEX;
     }
