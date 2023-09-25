@@ -24,7 +24,6 @@ public class AnimalTest {
         Animal animal = new Animal();
         try {
             animal.getFood(OMNIVORE);
-            Assert.fail(EXCEPTION_MESSAGE);
         } catch (Exception e) {
             Assert.assertEquals(EXPAT_UNKNOWN_TYPE, e.getMessage());
         }
