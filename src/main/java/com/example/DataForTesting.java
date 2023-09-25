@@ -55,6 +55,6 @@ public class DataForTesting {
             {WOMAN, true, PREDATOR, PREDATOR_FOOD},
     };
     public static final Object[][] LION_NEGATIVE_SEX = {
-            {PERVERT, true, PREDATOR, PREDATOR_FOOD, 5, 5, 5},
+            {PERVERT, PREDATOR, PREDATOR_FOOD, 5},
     };
 }

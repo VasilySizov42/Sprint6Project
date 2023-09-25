@@ -17,11 +17,8 @@ import static org.junit.Assert.assertThrows;
 @RunWith(Parameterized.class)
 public class NegativeLionTest {
     private final String sex;
-    private boolean exMane;
     private final String type;
     private final List food;
-    private final int kittenCount;
-    private final int exKittenCount;
     private final int iteration;
 
     @Before
@@ -31,18 +28,14 @@ public class NegativeLionTest {
     @Mock
     Feline feline;
     //Это this
-    public NegativeLionTest(String sex, boolean exMane, String type, List food,
-                            int kittenCount, int exKittenCount, int iteration) {
+    public NegativeLionTest(String sex, String type, List food, int iteration) {
         this.sex = sex;
-        this.exMane = exMane;
         this.type = type;
         this.food = food;
-        this.kittenCount = kittenCount;
-        this.exKittenCount = exKittenCount;
         this.iteration = iteration;
     }
     //Это this.NegativeLionTest
-    @Parameterized.Parameters(name = "Проверка lion.getKittens(), lion.getFood(). Тестовые данные: {0} {1} {2} {3} {4} {5} {6}")
+    @Parameterized.Parameters(name = "Проверка lion.getKittens(), lion.getFood(). Тестовые данные: {0} {1} {2} {3}")
     public static Object[][] params() {
         return LION_NEGATIVE_SEX;
     }
