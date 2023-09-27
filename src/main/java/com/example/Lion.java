@@ -2,31 +2,29 @@ package com.example;
 
 import java.util.List;
 
-public class Lion {
+import static com.example.DataForTesting.*;
 
+public class Lion {
+    Feline feline;
     boolean hasMane;
 
-    public Lion(String sex) throws Exception {
-        if ("Самец".equals(sex)) {
+    public Lion(Feline feline, String sex) throws Exception {
+        this.feline = feline;
+        if (MAN.equals(sex)) {
             hasMane = true;
-        } else if ("Самка".equals(sex)) {
+        } else if (WOMAN.equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception(EXPAT_UNKNOWN_MANE);
         }
     }
-
-    Feline feline = new Feline();
-
     public int getKittens() {
         return feline.getKittens();
     }
-
     public boolean doesHaveMane() {
         return hasMane;
     }
-
     public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
+        return feline.getFood(PREDATOR);
     }
 }

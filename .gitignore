@@ -9,6 +9,10 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
+# Idea components
+.idea
+target
+\src\test\java\com\example\ParameterizedFelineNegativeTest.java
 
 # Package Files #
 *.jar

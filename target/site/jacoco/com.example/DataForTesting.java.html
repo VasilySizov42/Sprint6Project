@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DataForTesting.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sprint6Project</a> &gt; <a href="index.source.html" class="el_package">com.example</a> &gt; <span class="el_source">DataForTesting.java</span></div><h1>DataForTesting.java</h1><pre class="source lang-java linenums">package com.example;
+
+import java.util.List;
+
+<span class="nc" id="L5">public class DataForTesting {</span>
+    //Basic
+<span class="fc" id="L7">    public static final Integer ZERO = 0;</span>
+<span class="fc" id="L8">    public static final Integer ONE_MORE_ZERO = 1;</span>
+<span class="fc" id="L9">    public static final Integer ONE_LESS_ZERO = -1;</span>
+<span class="fc" id="L10">    public static final Integer VAR_FOR_MATH = 10;</span>
+    //Animal types
+    public static final String PREDATOR = &quot;Хищник&quot;;
+    public static final String HERBIVORE = &quot;Травоядное&quot;;
+    public static final String OMNIVORE = &quot;Всеядное&quot;;
+    //Sex
+    public static final String MAN = &quot;Самец&quot;;
+    public static final String WOMAN = &quot;Самка&quot;;
+    public static final String PERVERT = &quot;Нечто&quot;;
+    //Feed
+<span class="fc" id="L20">    public static final List&lt;String&gt; PREDATOR_FOOD = List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;);</span>
+<span class="fc" id="L21">    public static final List&lt;String&gt; HERBIVORE_FOOD = List.of(&quot;Трава&quot;, &quot;Различные растения&quot;);</span>
+<span class="fc" id="L22">    public static final List&lt;String&gt; OMNIVORE_FOOD = List.of(&quot;Животные&quot;, &quot;Птицы&quot;, &quot;Рыба&quot;, &quot;Трава&quot;, &quot;Различные растения&quot;);</span>
+    public static final String INEDIBLE_FOOD = &quot;Неподходящая еда&quot;;
+    //Sound
+    public static final String CAT_SOUND = &quot;Мяу&quot;;
+    //Exemption messages
+    public static final String EXCEPTION_MESSAGE = &quot;Expected Exception&quot;;
+    public static final String UNEXPECTED_RESULT = &quot;Результат не совпадает с ожидаемым&quot;;
+    public static final String EXPAT_UNKNOWN_TYPE = &quot;Неизвестный вид животного, используйте значение Травоядное или Хищник&quot;;
+    public static final String EXPAT_UNKNOWN_MANE = &quot;Используйте допустимые значения пола животного - Самец или Самка&quot;;
+    //Other variables
+    public static final String FAMILY = &quot;Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи&quot;;
+    public static final String FELINE_FAMILY = &quot;Кошачьи&quot;;
+    //поля для заполнения:
+    //Пол, Соответствие мужскому, Тип животного, Еда, Количество вызовов метода,
+    // Ожидаемое колличество вызовов метода, Количество раз вызова метода
+<span class="fc" id="L37">    public static final Object[][] FELINE_TEST = {</span>
+<span class="fc" id="L38">            {1, 1, 0},</span>
+<span class="fc" id="L39">            {1, 1, 1},</span>
+<span class="fc" id="L40">            {-5, -5, 2},</span>
+<span class="fc" id="L41">            {-1, -1, 2},</span>
+<span class="fc" id="L42">            {0, 0, 2},</span>
+<span class="fc" id="L43">            {1, 1, 2},</span>
+<span class="fc" id="L44">            {2, 2, 2},</span>
+<span class="fc" id="L45">            {3, 3, 3},</span>
+    };
+<span class="fc" id="L47">    public static final Object[][] LION_TOLERABLE_SEX = {</span>
+<span class="fc" id="L48">            {MAN, true, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L49">            {WOMAN, false, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L50">            {MAN, true, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L51">            {WOMAN, false, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L52">            {WOMAN, false, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L53">            {WOMAN, false, PREDATOR, PREDATOR_FOOD},</span>
+<span class="fc" id="L54">            {MAN, true, PREDATOR, HERBIVORE_FOOD},</span>
+<span class="fc" id="L55">            {WOMAN, true, PREDATOR, PREDATOR_FOOD},</span>
+    };
+<span class="fc" id="L57">    public static final Object[][] LION_NEGATIVE_SEX = {</span>
+<span class="fc" id="L58">            {PERVERT, PREDATOR, PREDATOR_FOOD, 5},</span>
+    };
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
